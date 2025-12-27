@@ -25,13 +25,13 @@
 }
 
 .active-btn {
-  background: linear-gradient(to right,#6366f1 , #8b5cf6);
+  background: linear-gradient(to right,var(--color-primary) , var(--color-secondary));
   color: white;
   transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 .active-btn:hover {
-  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 10px 25px var(--color-primary);
 }
 
 .text-name{
