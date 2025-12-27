@@ -92,17 +92,17 @@ document.addEventListener("click", (e) => {
 
 let fontButtons = document.querySelectorAll(".font-option");
 
-// دالة تطبيق الخط
+
 function applyFont(font) {
   document.body.style.fontFamily = font;
 }
 
-// تحميل الخط المحفوظ أول ما الصفحة تفتح
+
 let savedFont = localStorage.getItem("siteFont");
 if (savedFont) {
   applyFont(savedFont);
 
-  // تفعيل الزرار المناسب
+ 
   for (let i = 0; i < fontButtons.length; i++) {
     if (fontButtons[i].getAttribute("data-font") === savedFont) {
       fontButtons[i].classList.add("active");
@@ -110,26 +110,26 @@ if (savedFont) {
   }
 }
 
-// كليك على الأزرار
+
 for (let i = 0; i < fontButtons.length; i++) {
   let btn = fontButtons[i];
 
   btn.addEventListener("click", () => {
 
-    // إزالة active من الكل
+    
     for (let j = 0; j < fontButtons.length; j++) {
       fontButtons[j].classList.remove("active");
     }
 
-    // إضافة active للزرار المختار
+    
     btn.classList.add("active");
 
     let font = btn.getAttribute("data-font");
 
-    // تطبيق الخط
+ 
     applyFont(font);
 
-    // تخزينه
+  
     localStorage.setItem("siteFont", font);
   });
 }
